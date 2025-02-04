@@ -20,5 +20,5 @@ jobs:
       - name: Validate Helm Chart
         uses: BoldFellow/helm-validate-action@main
         with:
-          chart-path: './charts/my-service'
-          values-file: './charts/my-service/values.yaml'
+          chart-path: './my-service/charts'
+          values-file: './my-service/charts/values.yaml'
