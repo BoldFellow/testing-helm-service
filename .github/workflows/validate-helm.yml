@@ -1,0 +1,23 @@
+name: 'Validate Helm Charts'
+
+on:
+  pull_request:
+    paths:
+      - 'charts/**'
+  push:
+    branches: [ main ]
+    paths:
+      - 'charts/**'
+
+jobs:
+  validate-helm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate Helm Chart
+        uses: BoldFellow/helm-validate-action@main
+        with:
+          chart-path: './charts/my-service'
+          values-file: './charts/my-service/values.yaml'

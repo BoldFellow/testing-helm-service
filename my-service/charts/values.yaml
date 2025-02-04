@@ -1,0 +1,9 @@
+service:
+  name: my-microservice
+  port: 8080
+  
+deployment:     
+  replicas: 2   
+  image: 
+    repository: my-registry/my-service
+    tag: latest
