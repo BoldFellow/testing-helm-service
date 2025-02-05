@@ -7,4 +7,3 @@ deployment:
   image: 
     repository: my-registry/my-service
     tag: latest
-    
