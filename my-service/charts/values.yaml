@@ -1,19 +1,9 @@
-# service:
-#   name: my-microservice
-#   port: 8080
-  
-# deployment:     
-#   replicas: 2   
-#   image: 
-#     repository: my-registry/my-service
-#     tag: latest
-
 service:
-name: my-microservice   # Indentation error
+  name: my-microservice
   port: 8080
   
-deployment:
-  replicas: "2"    # Wrong type (string instead of number)
-  image 
-    repository: my-registry/my-service  # Missing colon after 'image'
+deployment:     
+  replicas: 2   
+  image: 
+    repository: my-registry/my-service
     tag: latest
