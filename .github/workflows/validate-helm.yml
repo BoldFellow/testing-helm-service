@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - 'charts/**'
+      - 'my-service/**'
   push:
     branches: [ main ]
     paths:
-      - 'charts/**'
+      - 'my-service/**'
 
 jobs:
   validate-helm:

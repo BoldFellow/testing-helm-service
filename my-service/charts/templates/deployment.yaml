@@ -1,31 +1,12 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: {{ .Release.Name }}-deployment
-# spec:
-#   replicas: {{ .Values.deployment.replicas }} 
-#   selector:
-#     matchLabels:
-#       app: {{ .Values.service.name }}
-#   template:
-#     metadata:
-#       labels:
-#         app: {{ .Values.service.name }}
-#     spec:
-#       containers:
-#       - name: {{ .Values.service.name }}
-#         image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
-#         ports:
-#         - containerPort: {{ .Values.service.port }}
-
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }-deployment  # Missing closing brace
+  name: {{ .Release.Name }}-deployment
 spec:
-  replicas: {{ .Values.deployment.replicas }
-  selector:    # Missing matchLabels (required field)
+  replicas: {{ .Values.deployment.replicas }} 
+  selector:
+    matchLabels:
+      app: {{ .Values.service.name }}
   template:
     metadata:
       labels:
@@ -33,6 +14,6 @@ spec:
     spec:
       containers:
       - name: {{ .Values.service.name }}
-        image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment,image.tag }}  # Used comma instead of dot
+        image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
         ports:
         - containerPort: {{ .Values.service.port }}
