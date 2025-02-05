@@ -13,12 +13,14 @@ on:
 jobs:
   validate-helm:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+      
       - name: Validate Helm Chart
         uses: BoldFellow/helm-validate-action@main
         with:
           chart-path: './my-service/charts'
           values-file: './my-service/charts/values.yaml'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
