@@ -23,4 +23,3 @@ jobs:
         with:
           chart-path: './my-service/charts'
           values-file: './my-service/charts/values.yaml'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
