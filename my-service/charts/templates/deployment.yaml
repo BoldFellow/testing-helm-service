@@ -13,8 +13,8 @@ spec:
         app: {{ .Values.service.name }}
     spec:
       containers:
-      - name: {{ .Values.service.name }}
+      - name: {{ .Values.service.name } #
         image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
         ports:
-        - containerPort: {{ .Values.service.port }}
-        
+        - containerPort: {{ .Values,service.port }} #
+
