@@ -11,10 +11,10 @@ spec:
     metadata:
       labels:
         app: {{ .Values.service.name }}
-        release: {{ .Release.Name }} #
     spec:
       containers:
       - name: {{ .Values.service.name }}
         image: {{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - containerPort: {{ .Values.service.port }} 
+
