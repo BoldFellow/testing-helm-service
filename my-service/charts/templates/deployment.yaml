@@ -11,7 +11,6 @@ spec:
     metadata:
       labels:
         app: {{ .Values.service.name }}
-        release: {{ .Release.Name }} #
     spec:
       containers:
       - name: {{ .Values.service.name }}
