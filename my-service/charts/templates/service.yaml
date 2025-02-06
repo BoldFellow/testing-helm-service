@@ -6,7 +6,6 @@ metadata:
 spec:
   selector:
     app: {{ .Values.service.name }}
-  sessionAffinity: ClientIP
   type: {{ .Values.service.type | default "ClusterIP" }}
   ports:
   - port: {{ .Values.service.port }}
