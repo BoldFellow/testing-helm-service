@@ -1,5 +1,6 @@
 service:
   name: my-microservice
+  type: ClusterIP 
   port: 8080
   
 deployment:     
